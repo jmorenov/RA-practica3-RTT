@@ -123,7 +123,7 @@ class RRT():
         disglist = [self.calc_dist_to_goal(
             node.x, node.y) for node in self.nodeList]
         goalinds = [disglist.index(i) for i in disglist if i <= self.expandDis]
-        print(goalinds)
+        #print(goalinds)
 
         mincost = min([self.nodeList[i].cost for i in goalinds])
         for i in goalinds:
@@ -249,7 +249,7 @@ def main():
     # Set Initial parameters
     rrt = RRT(start=[0, 0], goal=[5, 10],
               randArea=[-2, 15], obstacleList=obstacleList)
-    path = rrt.Planning(animation=show_animation)
+    path = rrt.Planning(animation=False)
 
     # Draw final path
     if show_animation:
