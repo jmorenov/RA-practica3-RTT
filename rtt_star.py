@@ -151,6 +151,7 @@ class RRT():
         dlist = [(node.x - newNode.x) ** 2 +
                  (node.y - newNode.y) ** 2 for node in self.nodeList]
         nearinds = [dlist.index(i) for i in dlist if i <= r ** 2]
+
         return nearinds
 
     def rewire(self, newNode, nearinds):
